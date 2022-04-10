@@ -1,0 +1,22 @@
+var x = document.createElement("INPUT");
+x.setAttribute("type", "text");
+x.setAttribute("id", "Value");
+x.style.position = 'absolute';
+x.style.top = '2oo px';
+x.style.left = '300 px';
+x.style.width = '300 px';
+x.style.height = '300 px';
+x.style.border = '1 px solid black';
+x.style.position = 'relative';
+x.style.display = 'block';
+x.style.margin = '0 auto';
+x.style.backround = 'black'
+x.style.border = '1px solid magenta';
+x.style.padding = '1vmin';
+x.style.borderRadius = '1vmin';
+x.placeholder = "How Many Boxes?";
+x.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    x.style.display = 'none';
+   let value = document.getElementById('Value');
+    console.log(value);
