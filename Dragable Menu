@@ -1,0 +1,56 @@
+//menu decoration
+
+var menu = document.createElement('div');
+menu.style.background = 'black';
+menu.style.textAlign = 'center';
+menu.style.position = 'fixed';
+menu.style.left = '50%';
+menu.style.transform = 'translateX(-50%)';
+menu.style.border = '1px solid magenta';
+menu.style.padding = '1vmin';
+menu.style.borderRadius = '1vmin';
+menu.style.zIndex = '9999';
+menu.textContent += "ㅤMade By Virescent Overlordㅤ";
+menu.style.color = 'magenta';
+menu.style.boxShadow = "7px 7px 7px black";
+document.body.appendChild(menu);
+dragElement(menu);
+
+//Making Menu Dragable
+
+function dragElement(menu) {
+  var pos1 = 0,
+    pos2 = 0,
+    pos3 = 0,
+    pos4 = 0;
+  if (document.getElementById(menu.id + "header")) {
+    document.getElementById(menu.id + "header").onmousedown = dragMouseDown;
+  } else {
+    menu.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    menu.style.top = (menu.offsetTop - pos2) + "px";
+    menu.style.left = (menu.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
