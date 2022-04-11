@@ -2,11 +2,11 @@
 
 let backround = document.createElement('div');
 backround.style.textAlign = 'center'
-backround.textContent += "ㅤMade By Virescent Overlordㅤ";
+backround.textContent += "Made By Virescent Overlordㅤ";
 backround.style.color = 'white';
 backround.style.position = 'absolute';
-backround.style.width = '15%';
-backround.style.height = '20%';
+backround.style.width = '30%';
+backround.style.height = '25%';
 backround.style.top = '15%';
 backround.style.left = '25%';
 backround.style.background = '#1f1d18';
@@ -19,8 +19,8 @@ document.body.appendChild(backround);
 let button = document.createElement("div");
 button.style.textAlign = 'center';
 button.style.position = 'absolute';
-button.style.top = '35%';
-button.style.left = '45%';
+button.style.top = '25%';
+button.style.left = '40%';
 button.style.transform = 'translateX(-50%)';
 button.style.border = '1px solid white';
 button.style.padding = '1vmin';
