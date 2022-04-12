@@ -2,21 +2,40 @@ var x = document.createElement("INPUT");
 x.setAttribute("type", "text");
 x.setAttribute("id", "Value");
 x.style.position = 'absolute';
-x.style.top = '2oo px';
-x.style.left = '300 px';
-x.style.width = '300 px';
-x.style.height = '300 px';
+x.style.top = 250 + "px";
+x.style.left = '32%';
 x.style.border = '1 px solid black';
 x.style.position = 'relative';
 x.style.display = 'block';
-x.style.margin = '0 auto';
-x.style.backround = 'black'
-x.style.border = '1px solid magenta';
+x.style.border = '1px solid red';
 x.style.padding = '1vmin';
 x.style.borderRadius = '1vmin';
-x.placeholder = "How Many Boxes?";
+x.style.zIndex = '2';
 x.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
     x.style.display = 'none';
-   let value = document.getElementById('Value');
-    console.log(value);
+    box.style.display = 'none';
+    txt.style.display = 'none';
+    let value = document.getElementById('Value').value;
+  }
+});
+document.body.appendChild(x);
+let box = document.createElement('div');
+box.style.position = 'absolute';
+box.style.width = '35%';
+box.style.height = '40%';
+box.style.top = '25%';
+box.style.left = '25%';
+box.style.background = 'black';
+box.style.zIndex = '1';
+box.style.border = '1px solid red'
+document.body.appendChild(box);
+
+let txt = document.createElement('div');
+txt.textContent += "ㅤWhat Is Your Name?ㅤ";
+txt.style.color = 'white';
+txt.style.position = 'absolute';
+txt.style.top = 180 + "px";
+txt.style.left = '34%';
+txt.style.zIndex = '3';
+document.body.appendChild(txt);
